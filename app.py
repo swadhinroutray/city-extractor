@@ -17,4 +17,4 @@ def home():
             "City":places.cities[0] 
         })
 
-app.run(threaded=True,port=5000)
+app.run()
