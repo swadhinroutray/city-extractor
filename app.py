@@ -13,8 +13,8 @@ def home():
     print(text)
     places = GeoText(text)
     print(places.cities)
-    dict ={
-        "city": places.cities[0]
-    }
-    return dict
+    return flask.jsonify({
+            "City":places.cities[0] 
+        })
+
 app.run(threaded=True,port=5000)
