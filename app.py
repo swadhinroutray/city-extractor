@@ -1,7 +1,7 @@
 import flask
 from geotext import GeoText
 app = flask.Flask(__name__)
-app.config["DEBUG"] = True
+app.config["DEBUG"] = False
 
 
 @app.route('/getcity', methods=['POST'])
@@ -17,4 +17,4 @@ def home():
         "city": places.cities[0]
     }
     return dict
-app.run()
+app.run(threaded=True,port=5000)
