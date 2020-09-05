@@ -21,4 +21,4 @@ def home():
             "City":places.cities[0] 
         })
 
-app.run()
+app.run(port=8080)
