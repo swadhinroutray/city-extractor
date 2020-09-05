@@ -1,7 +1,7 @@
 import flask
 from geotext import GeoText
 app = flask.Flask(__name__)
-app.config["DEBUG"] = False
+app.config["DEBUG"] = True
 
 @app.route('/hello', methods=['GET'])
 def hello():
@@ -20,5 +20,5 @@ def home():
     return flask.jsonify({
             "City":places.cities[0] 
         })
-
-app.run(port=8080)
+if __name__ =='__main__':
+    app.run(port=8080)
