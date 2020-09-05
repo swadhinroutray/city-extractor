@@ -3,7 +3,11 @@ from geotext import GeoText
 app = flask.Flask(__name__)
 app.config["DEBUG"] = False
 
-
+@app.route('/hello', methods=['GET'])
+def hello():
+    return flask.jsonify({
+        "Hello": "Hello, how are you?"
+    })
 @app.route('/getcity', methods=['POST'])
 def home():
     print("Hello")
