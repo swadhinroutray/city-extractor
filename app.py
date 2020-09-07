@@ -1,4 +1,4 @@
-import flask
+import flask,json
 from geotext import GeoText
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
@@ -17,8 +17,8 @@ def home():
     print(text)
     places = GeoText(text)
     print(places.cities)
-    return flask.jsonify({
-            "City":places.cities[0] 
-        })
+    return json.dumps({
+        'city': places.cities
+    })
 if __name__ =='__main__':
-    app.run(port=8080)
+    app.run(port=5000)
